@@ -1,0 +1,71 @@
+/* /admin/assets/css/admin-protection.css */
+
+/* ------------------------------------------------
+   Protect WordPress admin layout
+------------------------------------------------ */
+
+body.wp-admin:not(.oone-admin-page) #wpwrap,
+body.wp-admin:not(.oone-admin-page) #wpcontent,
+body.wp-admin:not(.oone-admin-page) #wpbody,
+body.wp-admin:not(.oone-admin-page) #wpbody-content,
+body.wp-admin:not(.oone-admin-page) .wrap {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+
+/* ------------------------------------------------
+   Protect list tables
+------------------------------------------------ */
+
+body.wp-admin .wp-list-table,
+body.wp-admin .wp-list-table * {
+    position: relative !important;
+}
+
+
+/* ------------------------------------------------
+   Allow Orbit One modals to overlay admin
+------------------------------------------------ */
+
+#oone-addon-modal,
+#oone-block-modal,
+.oone-modal {
+    position: fixed !important;
+}
+
+
+/* ------------------------------------------------
+   Prevent Tailwind min-h-screen issues
+------------------------------------------------ */
+
+body.wp-admin .wrap[class*="oone-"] {
+    min-height: 0 !important;
+}
+
+
+/* ------------------------------------------------
+   Viewport height only on Orbit One pages
+------------------------------------------------ */
+body.oone-admin-page #wpwrap,
+body.oone-admin-page,
+body.oone-admin-page #wpcontent,
+body.oone-admin-page #wpbody,
+body.oone-admin-page #wpbody-content {
+    height: calc(100vh - 60px) !important;
+}
+
+body.oone-admin-page #wpbody-content {
+    display: flex;
+    flex-direction: column;
+}
+
+body.oone-admin-page #wpbody-content {
+    padding-bottom: 0 !important;
+}
+
+body.oone-admin-page .wrap {
+    height: calc(100vh - 60px) !important;
+    display: flex;
+    flex-direction: column;
+}

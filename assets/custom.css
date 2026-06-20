@@ -1,0 +1,770 @@
+/* ==========================================================================
+   1. THE GLOBAL SCOPED RESET (Mimics Tailwind CDN Preflight)
+   ========================================================================== */
+.oone-main-viewport,
+.oone-blocks,
+#oone-block-modal {
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	tab-size: 4;
+	font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Fix Box Sizing, Borders, and Paragraphs all at once */
+.oone-main-viewport *,
+.oone-main-viewport *::before,
+.oone-main-viewport *::after,
+.oone-kpi-main-viewport *,
+.oone-kpi-main-viewport *::before,
+.oone-kpi-main-viewport *::after,
+.oone-blocks *,
+.oone-blocks *::before,
+.oone-blocks *::after {
+	box-sizing: border-box;
+	border-width: 0;
+	border-style: solid;
+	border-color: #e5e7eb;
+}
+
+/* Reset Typography & Elements */
+.oone-main-viewport p,
+.oone-kpi-main-viewport p,
+.oone-blocks p {
+	margin: 0;
+	padding: 0;
+}
+.oone-main-viewport h1,
+.oone-main-viewport h2,
+.oone-main-viewport h3,
+.oone-kpi-main-viewport h1,
+.oone-kpi-main-viewport h2,
+.oone-kpi-main-viewport h3,
+.oone-blocks h1,
+.oone-blocks h2,
+.oone-blocks h3 {
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+}
+
+/* Link Reset: Kill WP Blue */
+.oone-main-viewport a,
+.oone-kpi-main-viewport a,
+.oone-blocks a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.oone-main-viewport a:hover,
+.oone-kpi-main-viewport a:hover,
+.oone-blocks a:hover {
+	color: #7c3aed;
+}
+
+/* ==========================================================================
+   BUTTON & INPUT RESET
+   ========================================================================== */
+.oone-main-viewport button,
+.oone-main-viewport input[type="button"],
+.oone-main-viewport input[type="submit"],
+.oone-kpi-main-viewport button,
+.oone-kpi-main-viewport input[type="button"],
+.oone-kpi-main-viewport input[type="submit"],
+.oone-blocks button {
+	background: none; /* Removes WP default gray/blue */
+	background-color: none;
+	border: none;
+	box-shadow: none; /* Removes WP button shadows */
+	text-shadow: none;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+/* Target all interaction states to kill the default blue/orange outlines */
+.oone-main-viewport button:focus,
+.oone-main-viewport button:active,
+.oone-main-viewport button:focus-visible,
+.oone-main-viewport input:focus,
+.oone-main-viewport input:active,
+.oone-kpi-main-viewport button:focus,
+.oone-kpi-main-viewport button:active,
+.oone-kpi-main-viewport button:focus-visible,
+.oone-kpi-main-viewport input:focus,
+.oone-kpi-main-viewport input:active,
+.oone-blocks button:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+	background-image: none; /* Some WP themes add a gradient on click */
+}
+
+/* Specific fix for Chrome/Safari's persistent focus ring */
+.oone-main-viewport *:focus,
+.oone-kpi-main-viewport *:focus {
+	outline: 0;
+}
+
+/* Ensure our Tailwind classes (like bg-purple-600) can still apply */
+.oone-main-viewport button[class*="bg-"],
+.oone-main-viewport input[type="submit"][class*="bg-"],
+.oone-kpi-main-viewport button[class*="bg-"],
+.oone-kpi-main-viewport input[type="submit"][class*="bg-"] {
+	background-color: currentColor; /* Allows Tailwind classes to take over */
+}
+
+/* ==========================================================================
+   2. EDITOR-ONLY PREVIEW FIXES (.oone-block-editor-preview)
+   ========================================================================== */
+
+/* 1. Fix the H2 and Heading Margins (The 45px issue) */
+.oone-block-editor-preview h1,
+.oone-block-editor-preview h2,
+.oone-block-editor-preview h3,
+.oone-block-editor-preview h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* 2. Remove Block-Gap (The space WP adds between all blocks) */
+.oone-block-editor-preview .is-root-container > .wp-block,
+.oone-block-editor-preview .wp-block {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* 3. Remove "Appender" Space (The 'Click to add block' empty area) */
+.oone-block-editor-preview .block-list-appender,
+.oone-block-editor-preview
+	.wp-block-group__inner-container
+	> .block-list-appender {
+	display: none !important;
+	height: 0 !important;
+}
+
+/* 4. Fix Kadence Specific Row/Section Editor Padding */
+.oone-block-editor-preview .kt-row-column-wrap,
+.oone-block-editor-preview .kt-section-main-attr {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* 5. Force Paragraph Reset (Editor tends to inject 1em margin) */
+.oone-block-editor-preview p {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* 6. Fix "Post Title" extra space if it's appearing inside your preview */
+.oone-block-editor-preview .editor-post-title {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* ==========================================================================
+   3. HEADER & LAYOUT LOGIC
+   ========================================================================== */
+/* Container & Border */
+.oone-header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #e2e8f0 !important; /* border-slate-200 */
+}
+
+/* Status Indicator Animation */
+.oone-status-indicator {
+	position: relative;
+	display: flex;
+	height: 0.5rem;
+	width: 0.5rem;
+}
+
+.oone-status-dot {
+	position: relative;
+	display: inline-flex;
+	border-radius: 9999px;
+	height: 0.5rem;
+	width: 0.5rem;
+	background-color: #22c55e; /* bg-green-500 */
+}
+
+.oone-status-ping {
+	position: absolute;
+	display: inline-flex;
+	height: 100%;
+	width: 100%;
+	border-radius: 9999px;
+	background-color: #4ade80; /* bg-green-400 */
+	opacity: 0.75;
+	animation: oone-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes oone-ping {
+	75%,
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+/* Header Title Fixes */
+.oone-header-title {
+	font-weight: 600 !important;
+	color: #1e293b !important; /* text-slate-800 */
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 1 !important;
+}
+
+/* --- Layout Logic --- */
+.oone-header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 1.25rem;
+	border-bottom: 1px solid #e2e8f0 !important; /* Forces the Image 2 border */
+}
+
+.oone-header-left {
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+	align-self: center;
+}
+
+.oone-logo-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	line-height: 0;
+}
+
+/* --- User Badge Logic --- */
+.oone-user-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	gap: 12px;
+	background: white;
+	padding: 4px 16px 4px 4px;
+	border-radius: 9999px;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.oone-user-initials {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: linear-gradient(to top right, #7c3aed, #4f46e5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	font-weight: bold;
+	color: white;
+}
+
+.oone-user-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	line-height: 1.15;
+}
+
+.oone-user-name {
+	font-size: 14px;
+	font-weight: 700;
+	color: #1e293b;
+}
+
+.oone-user-login {
+	font-size: 10px;
+	font-weight: 500;
+	color: #94a3b8;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* --- Animation Logic --- */
+.oone-user-name-row {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.oone-status-indicator {
+	position: relative;
+	display: flex;
+	height: 8px;
+	width: 8px;
+}
+
+.oone-status-dot {
+	position: relative;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
+	background-color: #b9baba;
+}
+
+.oone-status-dot-active {
+	position: relative;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
+	background-color: #22c55e;
+}
+
+.oone-status-ping {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	background-color: #4ade80;
+	opacity: 0.75;
+	animation: oone-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes oone-ping {
+	75%,
+	100% {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+
+/* --- Responsive Title --- */
+.oone-header-title {
+	display: flex;
+	align-items: center;
+	margin: 0 !important;
+	font-weight: 600 !important;
+	color: #1e293b !important;
+}
+
+@media (min-width: 600px) {
+	.oone-header-title {
+		font-size: 28px !important;
+	}
+}
+@media (max-width: 600px) {
+	.oone-header-title {
+		font-size: 21px !important;
+	}
+}
+@media (max-width: 500px) {
+	.oone-user-badge-wrapper {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   4. UTILITIES & RESPONSIVE
+   ========================================================================== */
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+@media (min-width: 600px) {
+	.oone-header-title {
+		font-size: 28px !important;
+	}
+}
+@media (max-width: 600px) {
+	.oone-header-title {
+		font-size: 21px !important;
+	}
+}
+@media (max-width: 550px) {
+	.oone-user-badge-wrapper {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   5. CORE VIEWPORT & LAYOUT (Merged from Blocks, Leads, and Settings)
+   ========================================================================== */
+
+/* Prevent WordPress footer from jumping/overlapping */
+#wpbody-content {
+	padding-bottom: 0 !important;
+}
+
+#wpfooter {
+	display: none !important;
+}
+
+/* The magic container that stays fixed to the screen */
+.oone-main-viewport {
+	height: calc(100vh - 60px) !important; /* Standardized for Admin Bar */
+	display: flex !important;
+	flex-direction: column !important;
+	overflow: hidden !important;
+	position: relative;
+	box-sizing: border-box;
+	min-height: 0;
+}
+
+.oone-kpi-main-viewport {
+	height: calc(100vh) !important; /* Standardized for Admin Bar */
+	display: flex !important;
+	flex-direction: column !important;
+	overflow: hidden !important;
+	position: relative;
+	box-sizing: border-box;
+	min-height: 0;
+}
+
+.oone-scroll-area {
+	flex: 1;
+	overflow-y: auto;
+	min-height: 0;
+	scrollbar-width: thin;
+	padding: 24px; /* Desktop (default) */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+	.oone-scroll-area {
+		padding: 16px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+	.oone-scroll-area {
+		padding: 12px;
+	}
+}
+
+/* ==========================================================================
+   6. SCROLLABLE AREAS & SCROLLBARS
+   ========================================================================== */
+
+/* Shared Custom Scrollbar Logic */
+.oone-scrollable-area::-webkit-scrollbar,
+.oone-lead-scroll::-webkit-scrollbar,
+#m-meta-container::-webkit-scrollbar {
+	width: 6px;
+}
+
+.oone-scrollable-area::-webkit-scrollbar-thumb,
+.oone-lead-scroll::-webkit-scrollbar-thumb,
+#m-meta-container::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 10px;
+}
+
+/* ==========================================================================
+   7. SHARED UI COMPONENTS (Buttons, FAQ, Sticky Footer)
+   ========================================================================== */
+
+:root {
+	--oone-purple: #7c3aed;
+	--oone-purple-hover: #6d28d9;
+}
+
+/* Unified Purple Button */
+.purple-btn {
+	background-color: var(--oone-purple) !important;
+	color: white !important;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: all 0.2s;
+}
+
+.purple-btn:hover {
+	background-color: var(--oone-purple-hover) !important;
+}
+
+/* Copy Button Utility */
+.copy-btn {
+	cursor: pointer;
+	color: #94a3b8;
+	transition: color 0.2s;
+}
+
+.copy-btn:hover {
+	color: var(--oone-purple);
+}
+
+/* Sticky Footer (Used in Leads/Tasks tables) */
+.oone-footer-sticky {
+	background: white !important;
+	border: 1px solid #e2e8f0 !important;
+	border-top: none !important;
+	padding: 1rem 1.5rem !important;
+	border-radius: 0 0 1.5rem 1.5rem !important;
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+	flex-shrink: 0;
+}
+
+/* FAQ Accordion Logic */
+.faq-item.active .faq-content {
+	grid-template-rows: 1fr;
+}
+
+.faq-item.active .faq-icon {
+	transform: rotate(180deg);
+	color: #9333ea;
+}
+
+.faq-item.active .faq-trigger {
+	color: #9333ea;
+}
+
+.faq-content {
+	grid-template-rows: 0fr;
+}
+
+.faq-item.active .faq-content {
+	grid-template-rows: 1fr;
+}
+
+.faq-focus-highlight {
+	animation: faq-glow 2s ease-out;
+}
+@keyframes faq-glow {
+	0% {
+		box-shadow: 0 0 0 0px rgba(147, 51, 234, 0);
+		border-color: rgb(226, 232, 240);
+	}
+	20% {
+		box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.3);
+		border-color: #9333ea;
+	}
+	100% {
+		box-shadow: 0 0 0 0px rgba(147, 51, 234, 0);
+		border-color: rgb(226, 232, 240);
+	}
+}
+
+/* ==========================================================================
+   8. MODALS & PREVIEWS
+   ========================================================================== */
+
+body.oone-modal-active {
+	overflow: hidden !important;
+}
+
+#oone-lead-modal {
+	padding: 40px 0;
+}
+
+#oone-lead-modal .relative {
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 80px);
+	width: 100%;
+	max-width: 28rem;
+	margin: auto;
+	background: white;
+	border-radius: 2rem;
+	overflow: hidden;
+	position: relative;
+}
+
+#m-meta-container {
+	flex: 1;
+	overflow-y: auto;
+	padding: 2rem;
+	background-color: rgb(248 250 252 / 0.5);
+	scrollbar-gutter: stable;
+}
+
+/* ==========================================================================
+   9. SETTINGS PAGE SPECIFIC (Palette Grid)
+   ========================================================================== */
+
+#oone-palette-grid {
+    display: grid !important; /* Ensure it stays a grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important; /* Tailwind's gap-6 */
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: start; /* Prevents stretching issues */
+}
+
+.oone-main-viewport .form-table {
+    margin: 0 !important;
+    border: none !important;
+}
+
+#oone-palette-grid::-webkit-scrollbar {
+	width: 8px;
+}
+
+#oone-palette-grid::-webkit-scrollbar-track {
+	background: #f1f5f9;
+	border-radius: 10px;
+}
+
+#oone-palette-grid::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 10px;
+}
+
+#oone-palette-grid::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+/* Prevent radio inputs from triggering layout shifts */
+#oone-palette-grid input[type="radio"] {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: none !important;
+}
+
+/* Ensure labels inside the grid behave as blocks */
+#oone-palette-grid label.palette-container {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Column Utilities */
+.col-subject {
+	max-width: 180px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* ==========================================================================
+   10. BLOCKS PAGE CSS
+   ========================================================================== */
+
+/* Fixed proportion for mobile frame */
+.device-mobile-frame {
+	width: 240px;
+	aspect-ratio: 9 / 18.5;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 1. Center the preview image and prevent internal scrolling */
+.preview-window-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	/* Prevent internal scroll */
+}
+
+.preview-window-container img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	/* Keeps image aspect ratio and centers it */
+}
+
+/* 2. Custom scrollbar for the POPUP modal itself */
+.oone-modal-scrollable {
+	overflow-y: auto !important;
+	scrollbar-width: thin;
+	scrollbar-color: #9333ea #f1f5f9;
+}
+
+.oone-modal-scrollable::-webkit-scrollbar {
+	width: 6px;
+}
+
+.oone-modal-scrollable::-webkit-scrollbar-track {
+	background: #f1f5f9;
+}
+
+.oone-modal-scrollable::-webkit-scrollbar-thumb {
+	background: #9333ea;
+	border-radius: 10px;
+}
+
+/* GLOBAL MODERN SCROLLBAR */
+.custom-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(147, 51, 234, 0.6) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+	width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+	margin: 6px 0;
+	/* spacing top/bottom */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		180deg,
+		rgba(147, 51, 234, 0.7),
+		rgba(147, 51, 234, 0.4)
+	);
+	border-radius: 999px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+	transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		180deg,
+		rgba(147, 51, 234, 0.9),
+		rgba(147, 51, 234, 0.6)
+	);
+}
+
+/* Active (when dragging) */
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+	background: rgba(147, 51, 234, 1);
+}
+
+.custom-scrollbar {
+	scroll-behavior: smooth;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+	box-shadow: 0 0 6px rgba(147, 51, 234, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 6px;
+}
+
+.oone-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.toplevel_page_oone-dashboard .wp-submenu a[href="admin.php?page=oone-upgrade-pro"] {
+    color: #9813ca !important;
+    font-weight: 700 !important;
+}

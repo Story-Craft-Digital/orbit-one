@@ -1,0 +1,557 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "oone/oone-smart-contact-form",
+  "version": "0.1.0",
+  "title": "Smart Contact Form",
+  "category": "oone-blocks",
+  "icon": "email",
+  "description": "An intelligent, high-conversion contact system that bridges your website directly to Google Sheets and your KPI dashboard. Featuring real-time email typo-correction, global phone number validation, and an automated lead-tracking engine, it ensures no inquiry is lost while keeping your data organized and actionable.",
+  "example": {},
+  "keywords": [
+    "contact",
+    "form",
+    "google",
+    "googleForm",
+    "email",
+    "integration",
+    "oone"
+  ],
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "formId": {
+      "type": "string",
+      "default": "Form 1"
+    },
+    "formSource": {
+      "type": "string",
+      "default": "Contact Us Page"
+    },
+    "googleFormLink": {
+      "type": "string",
+      "default": ""
+    },
+    "width": {
+      "type": "number",
+      "default": 500
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "borderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "25",
+        "topRight": "25",
+        "bottomRight": "25",
+        "bottomLeft": "25"
+      }
+    },
+    "mobileBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "0",
+        "topRight": "0",
+        "bottomRight": "0",
+        "bottomLeft": "0"
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "20",
+        "right": "30",
+        "bottom": "20",
+        "left": "30"
+      }
+    },
+    "mobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "20",
+        "right": "20",
+        "bottom": "20",
+        "left": "20"
+      }
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "10",
+        "right": "10",
+        "bottom": "10",
+        "left": "10"
+      }
+    },
+    "mobileMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "transparent"
+    },
+    "image": {
+      "type": "string",
+      "default": "oone-contact-form-image.webp"
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "imageOpacity": {
+      "type": "number",
+      "default": 0.5
+    },
+    "mobileViewBreakPoint": {
+      "type": "number",
+      "default": 410
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "transparent"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.45
+    },
+    "shadow": {
+      "type": "object",
+      "default": {
+        "enabled": true,
+        "offsetX": 0,
+        "offsetY": 4,
+        "blur": 30,
+        "spread": 0,
+        "color": "#000000",
+        "opacity": 0.15
+      }
+    },
+    "title": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "titleFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "titleFontSize": {
+      "type": "number",
+      "default": 35
+    },
+    "mobileTitleFontSize": {
+      "type": "number",
+      "default": 25
+    },
+    "titleLineHeight": {
+      "type": "number",
+      "default": 1.3
+    },
+    "mobileTitleLineHeight": {
+      "type": "number",
+      "default": 1.4
+    },
+    "titleGradient": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleAnimation": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "titleGradientColor": {
+      "type": "string",
+      "default": "linear-gradient(90deg, primary, secondary, primary)"
+    },
+    "titleAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "titleVerticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "titleBold": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleItalics": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleUnderline": {
+      "type": "boolean",
+      "default": false
+    },
+    "titlePadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "mobileTitlePadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "labelFontFamily": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "labelFontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "mobileLabelFontSize": {
+      "type": "number",
+      "default": 13
+    },
+    "labelColor": {
+      "type": "string",
+      "default": "#737373"
+    },
+    "subjectFieldLabel": {
+      "type": "string",
+      "default": "Subject"
+    },
+    "subjects": {
+      "type": "array",
+      "default": [
+        "General Inquiry",
+        "Technical Support",
+        "Billing & Payments",
+        "Partnership Opportunities",
+        "Request a Quote",
+        "Feedback & Suggestions",
+        "Report a Bug",
+        "Sales Inquiry",
+        "Career Opportunities",
+        "Media & PR"
+      ]
+    },
+    "messageFieldLabel": {
+      "type": "string",
+      "default": "Message"
+    },
+    "messageFieldPlaceholder": {
+      "type": "string",
+      "default": "Enter your message"
+    },
+    "firstNameFieldPlaceholder": {
+      "type": "string",
+      "default": "First Name"
+    },
+    "lastNameFieldPlaceholder": {
+      "type": "string",
+      "default": "Last Name"
+    },
+    "emailFieldPlaceholder": {
+      "type": "string",
+      "default": "Enter your email"
+    },
+    "defaultCountry": {
+      "type": "string",
+      "default": "US"
+    },
+    "buttonFontSize": {
+      "type": "number",
+      "default": 18
+    },
+    "buttonMobileFontSize": {
+      "type": "number",
+      "default": 13
+    },
+    "buttonAlign": {
+      "type": "string",
+      "default": "right"
+    },
+    "buttonTextAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "buttonTakesFullWidth": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonMargin": {
+      "type": "object",
+      "default": {
+        "top": "30",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "buttonMobileMargin": {
+      "type": "object",
+      "default": {
+        "top": "15",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "buttonBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "15",
+        "topRight": "15",
+        "bottomRight": "15",
+        "bottomLeft": "15"
+      }
+    },
+    "buttonBorder": {
+      "type": "number",
+      "default": 0
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Submit Request"
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": "secondary"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "buttonTextHoverColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "buttonPadding": {
+      "type": "object",
+      "default": {
+        "top": "12",
+        "right": "20",
+        "bottom": "12",
+        "left": "20"
+      }
+    },
+    "buttonMobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "7",
+        "right": "15",
+        "bottom": "7",
+        "left": "15"
+      }
+    },
+    "inputFieldsGap": {
+      "type": "number",
+      "default": 14
+    },
+    "inputFieldsMobileGap": {
+      "type": "number",
+      "default": 10
+    },
+    "inputBorderColor": {
+      "type": "string",
+      "default": "neutral"
+    },
+    "inputBorderFocusColor": {
+      "type": "string",
+      "default": "accent"
+    },
+    "subjectDropdownArrowColor": {
+      "type": "string",
+      "default": "neutral"
+    },
+    "inputBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "10",
+        "topRight": "10",
+        "bottomRight": "10",
+        "bottomLeft": "10"
+      }
+    },
+    "inputMobileBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "5",
+        "topRight": "5",
+        "bottomRight": "5",
+        "bottomLeft": "5"
+      }
+    },
+    "inputPadding": {
+      "type": "object",
+      "default": {
+        "top": "10",
+        "right": "15",
+        "bottom": "10",
+        "left": "15"
+      }
+    },
+    "inputMobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "5",
+        "right": "5",
+        "bottom": "5",
+        "left": "5"
+      }
+    },
+    "placeholderScale": {
+      "type": "number",
+      "default": 0.9
+    },
+    "inputBorder": {
+      "type": "number",
+      "default": 1
+    },
+    "inputShadow": {
+      "type": "object",
+      "default": {
+        "enabled": true,
+        "offsetX": 0,
+        "offsetY": 4,
+        "blur": 30,
+        "spread": 0,
+        "color": "#000000",
+        "opacity": 0.15
+      }
+    },
+    "phoneNumberFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "formSourceFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "subjectFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "messageFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "firstNameFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "lastNameFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "emailFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "entryIdFieldName": {
+      "type": "string",
+      "default": ""
+    },
+    "formFields": {
+      "type": "array",
+      "default": []
+    },
+    "newSubject": {
+      "type": "string",
+      "default": ""
+    },
+    "businessName": {
+      "type": "string",
+      "default": ""
+    },
+    "businessLogo": {
+      "type": "string",
+      "default": ""
+    },
+    "businessLogoAltText": {
+      "type": "string",
+      "default": ""
+    },
+    "businessPhone": {
+      "type": "string",
+      "default": ""
+    },
+    "businessEmail": {
+      "type": "string",
+      "default": ""
+    },
+    "contactType": {
+      "type": "string",
+      "default": "Customer Support"
+    },
+    "areaServed": {
+      "type": "string",
+      "default": ""
+    },
+    "availableLanguage": {
+      "type": "string",
+      "default": "English"
+    },
+    "spinnerRingColor": {
+      "type": "string",
+      "default": "secondary"
+    },
+    "spinnerDotColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "loadingTextColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "dotsColor": {
+      "type": "string",
+      "default": "primary"
+    }
+  },
+  "textdomain": "orbit-one",
+  "editorScript": [
+    "file:./index.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette"
+  ]
+}

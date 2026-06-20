@@ -1,0 +1,443 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "oone/oone-blog-auto-scroller",
+  "version": "0.1.0",
+  "title": "Blog Auto Scroller",
+  "category": "oone-blocks",
+  "description": "A space-saving content section that automatically scrolls through long text in a fixed window. Features an animated gradient title, customizable background images, and dual call-to-action buttons for high engagement without cluttering your page.",
+  "example": {},
+  "keywords": [
+    "info",
+    "section",
+    "scroll",
+    "blog",
+    "auto",
+    "content",
+    "oone",
+    "buttons",
+    "stylish"
+  ],
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "default": "Turning Digital Noise into Brand Resonance"
+    },
+    "text": {
+      "type": "string",
+      "default": "In an era where the digital landscape is saturated with fleeting trends and fragmented data, Story Craft Digital stands as a beacon for brands that demand more than just visibility. We believe that every business has an inherent narrative waiting to be told—a unique frequency that, when tuned correctly, cuts through the static of the modern web. Our approach merges the analytical precision of high-conversion marketing with the timeless art of emotive storytelling. By meticulously crafting personalized digital strategies, from immersive SEO frameworks to high-impact automation, we don't just help you reach your audience; we help you resonate with them. Whether you are a small business looking to scale through WhatsApp integration or a growing enterprise redefining your interior design presence, we act as your strategic partners in progress. At Story Craft Digital, we aren't just managing leads—we are curating the future of your brand’s digital legacy."
+    },
+    "width": {
+      "type": "number",
+      "default": 800
+    },
+    "height": {
+      "type": "number",
+      "default": 600
+    },
+    "mobileHeight": {
+      "type": "number",
+      "default": 450
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "borderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "20",
+        "topRight": "20",
+        "bottomRight": "20",
+        "bottomLeft": "20"
+      }
+    },
+    "mobileBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "0",
+        "topRight": "0",
+        "bottomRight": "0",
+        "bottomLeft": "0"
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "20",
+        "right": "20",
+        "bottom": "20",
+        "left": "20"
+      }
+    },
+    "mobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "15",
+        "right": "15",
+        "bottom": "15",
+        "left": "15"
+      }
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "mobileMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "linear-gradient(135deg, secondary, light)"
+    },
+    "image": {
+      "type": "string",
+      "default": "oone-pink-purple-bg-image.webp"
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "imageOpacity": {
+      "type": "number",
+      "default": 0.3
+    },
+    "mobileViewBreakPoint": {
+      "type": "number",
+      "default": 500
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "transparent"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.45
+    },
+    "scrollSpeed": {
+      "type": "number",
+      "default": 0.3
+    },
+    "shadow": {
+      "type": "object",
+      "default": {
+        "enabled": true,
+        "offsetX": 0,
+        "offsetY": 4,
+        "blur": 30,
+        "spread": 0,
+        "color": "#000000",
+        "opacity": 0.15
+      }
+    },
+    "titleFontSize": {
+      "type": "number",
+      "default": 40
+    },
+    "mobileTitleFontSize": {
+      "type": "number",
+      "default": 25
+    },
+    "titleLineHeight": {
+      "type": "number",
+      "default": 1.3
+    },
+    "mobileTitleLineHeight": {
+      "type": "number",
+      "default": 1.3
+    },
+    "titleGradient": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleAnimation": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "accent"
+    },
+    "titleGradientColor": {
+      "type": "string",
+      "default": "linear-gradient(90deg, primary, secondary, primary)"
+    },
+    "titleAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "titleVerticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "titleBold": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleItalics": {
+      "type": "boolean",
+      "default": false
+    },
+    "titleUnderline": {
+      "type": "boolean",
+      "default": false
+    },
+    "titlePadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "mobileTitlePadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "10",
+        "left": "0"
+      }
+    },
+    "textFontSize": {
+      "type": "number",
+      "default": 20
+    },
+    "mobileTextFontSize": {
+      "type": "number",
+      "default": 16
+    },
+    "textIndent": {
+      "type": "number",
+      "default": 10
+    },
+    "textLineHeight": {
+      "type": "number",
+      "default": 1.6
+    },
+    "mobileTextLineHeight": {
+      "type": "number",
+      "default": 1.7
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "neutral"
+    },
+    "textMargin": {
+      "type": "object",
+      "default": {
+        "top": "15",
+        "right": "10",
+        "bottom": "15",
+        "left": "10"
+      }
+    },
+    "textMobileMargin": {
+      "type": "object",
+      "default": {
+        "top": "10",
+        "right": "5",
+        "bottom": "10",
+        "left": "5"
+      }
+    },
+    "buttonsFontSize": {
+      "type": "number",
+      "default": 20
+    },
+    "buttonsMobileFontSize": {
+      "type": "number",
+      "default": 15
+    },
+    "buttonsGap": {
+      "type": "number",
+      "default": 20
+    },
+    "buttonsMobileGap": {
+      "type": "number",
+      "default": 10
+    },
+    "buttonsAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "buttonsVerticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "buttonsTextAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "buttonsMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "buttonsMobileMargin": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "0",
+        "bottom": "0",
+        "left": "0"
+      }
+    },
+    "buttonsBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": "10",
+        "topRight": "10",
+        "bottomRight": "10",
+        "bottomLeft": "10"
+      }
+    },
+    "primaryButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondaryButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "primaryButtonBorder": {
+      "type": "number",
+      "default": 0
+    },
+    "secondaryButtonBorder": {
+      "type": "number",
+      "default": 0
+    },
+    "primaryButtonLink": {
+      "type": "string",
+      "default": "#"
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "default": "Primary Button"
+    },
+    "primaryButtonColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "primaryButtonHoverColor": {
+      "type": "string",
+      "default": "light"
+    },
+    "primaryButtonTextColor": {
+      "type": "string",
+      "default": "light"
+    },
+    "primaryButtonTextHoverColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "primaryButtonPadding": {
+      "type": "object",
+      "default": {
+        "top": "8",
+        "right": "16",
+        "bottom": "8",
+        "left": "16"
+      }
+    },
+    "primaryButtonMobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "5",
+        "right": "10",
+        "bottom": "5",
+        "left": "10"
+      }
+    },
+    "secondaryButtonLink": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "default": "Secondary Button"
+    },
+    "secondaryButtonColor": {
+      "type": "string",
+      "default": "transparent"
+    },
+    "secondaryButtonHoverColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "secondaryButtonTextColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "secondaryButtonTextHoverColor": {
+      "type": "string",
+      "default": "light"
+    },
+    "secondaryButtonPadding": {
+      "type": "object",
+      "default": {
+        "top": "8",
+        "right": "16",
+        "bottom": "8",
+        "left": "16"
+      }
+    },
+    "secondaryButtonMobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "5",
+        "right": "10",
+        "bottom": "5",
+        "left": "10"
+      }
+    }
+  },
+  "textdomain": "orbit-one",
+  "editorScript": [
+    "file:./index.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette",
+    "wp-i18n"
+  ]
+}

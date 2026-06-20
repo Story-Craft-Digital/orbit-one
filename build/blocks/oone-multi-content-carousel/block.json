@@ -1,0 +1,223 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "oone/oone-multi-content-carousel",
+  "version": "0.1.0",
+  "title": "Multi-Content Carousel",
+  "category": "oone-blocks",
+  "icon": "email",
+  "description": "A high-performance, interactive slider designed to showcase portfolios, services, or case studies. Featuring smooth touch-and-drag navigation, an intelligent progress tracker, and SEO-ready structured data, it delivers a cinematic browsing experience that scales perfectly from desktop to mobile.",
+  "keywords": [
+    "details",
+    "project",
+    "process",
+    "content",
+    "oone",
+    "slide"
+  ],
+  "supports": {
+    "html": false,
+    "multiple": true
+  },
+  "example": {},
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Visual Storytelling",
+          "image": "oone-carousel-image-visual-storytelling.webp",
+          "imgAlt": "SCD Brand design showcase",
+          "link": "#",
+          "fontSize": 25,
+          "textPosition": "bottom",
+          "titleColor": "white",
+          "filterColor": "accent",
+          "backgroundColor": "white"
+        },
+        {
+          "title": "Digital Ecosystems",
+          "image": "oone-carousel-image-digital-echo-system.webp",
+          "imgAlt": "SCD Modern web interface",
+          "link": "#",
+          "fontSize": 25,
+          "textPosition": "bottom",
+          "titleColor": "white",
+          "filterColor": "accent",
+          "backgroundColor": "white"
+        },
+        {
+          "title": "Revenue Scaling",
+          "image": "oone-carousel-image-revenue-scaling.webp",
+          "imgAlt": "SCD Analytics and growth charts",
+          "link": "#",
+          "fontSize": 25,
+          "textPosition": "bottom",
+          "titleColor": "white",
+          "filterColor": "accent",
+          "backgroundColor": "white"
+        },
+        {
+          "title": "Narrative Mastery",
+          "image": "oone-carousel-image-narrative-mastery.webp",
+          "imgAlt": "SCD Content creation desk",
+          "link": "#",
+          "fontSize": 25,
+          "textPosition": "bottom",
+          "titleColor": "white",
+          "filterColor": "accent",
+          "backgroundColor": "white"
+        },
+        {
+          "title": "Next-Gen Tech",
+          "image": "oone-carousel-image-future-tech-potrait.webp",
+          "imgAlt": "SCD AI and technology nodes",
+          "link": "#",
+          "fontSize": 25,
+          "textPosition": "bottom",
+          "titleColor": "white",
+          "filterColor": "accent",
+          "backgroundColor": "white"
+        }
+      ]
+    },
+    "slideGap": {
+      "type": "number",
+      "default": 30
+    },
+    "buttonSize": {
+      "type": "number",
+      "default": 40
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "transparent"
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "20",
+        "right": "0",
+        "bottom": "20",
+        "left": "0"
+      }
+    },
+    "mobilePadding": {
+      "type": "object",
+      "default": {
+        "top": "10",
+        "right": "0",
+        "bottom": "10",
+        "left": "0"
+      }
+    },
+    "title": {
+      "type": "string",
+      "default": "Our Strategic Solutions"
+    },
+    "titleFontSize": {
+      "type": "number",
+      "default": 50
+    },
+    "titleLineHeight": {
+      "type": "number",
+      "default": 1
+    },
+    "titlePadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "right": "20",
+        "bottom": "0",
+        "left": "20"
+      }
+    },
+    "titleAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "titleBold": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleItalics": {
+      "type": "boolean",
+      "default": false
+    },
+    "titleUnderline": {
+      "type": "boolean",
+      "default": false
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "primary"
+    },
+    "minSlidesToShow": {
+      "type": "number",
+      "default": 1.3
+    },
+    "slideBorderRadius": {
+      "type": "object",
+      "default": {
+        "topLeft": 20,
+        "topRight": 20,
+        "bottomRight": 20,
+        "bottomLeft": 20
+      }
+    },
+    "uniteSlideSettings": {
+      "type": "boolean",
+      "default": true
+    },
+    "slideTitleFontSize": {
+      "type": "number",
+      "default": 25
+    },
+    "slideTitleColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "slideFilterColor": {
+      "type": "string",
+      "default": "accent"
+    },
+    "slideBackgroundColor": {
+      "type": "string",
+      "default": "white"
+    },
+    "progressbarColor": {
+      "type": "string",
+      "default": "linear-gradient(90deg, secondary, primary)"
+    },
+    "autoScrolling": {
+      "type": "boolean",
+      "default": false
+    },
+    "scrollSpeed": {
+      "type": "number",
+      "default": 0.5
+    },
+    "progressbar": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "textdomain": "orbit-one",
+  "editorScript": [
+    "file:./index.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js",
+    "oone-shared-libs",
+    "oone-tailwind",
+    "oone-color-palette"
+  ]
+}
