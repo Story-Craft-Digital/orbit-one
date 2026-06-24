@@ -1,0 +1,197 @@
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Hide scrollbar for all browsers */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.storycraft-tabs .components-tab-panel__tabs {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 5px;
+	border-bottom: 2px solid #9813ca;
+	box-sizing: border-box;
+}
+
+.storycraft-tabs .components-tab-panel__tabs-item {
+	flex: 1 1 auto;
+	padding: 12px 10px; /* Reduced horizontal padding */
+	text-align: center;
+	font-weight: bold;
+	background: #ffffff;
+	color: #9813ca;
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+	border-radius: 6px 6px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	box-sizing: border-box;
+
+	&:hover {
+		background: #eed4fa;
+	color: #9813ca;
+	}
+
+	&:focus {
+		outline: none;
+		background: #eed4fa;
+	color: #9813ca;
+		box-shadow: 0 0 6px rgba(197, 90, 242, 0.7);
+	}
+
+	&.active-tab {
+    background: #9813ca;
+    color: #eed4fa;
+    border-bottom: 3px solid #eed4fa;
+    &:hover {
+      background: #eed4fa;
+      color: #9813ca; 
+    border-bottom: 3px solid #9813ca;
+    }
+  }
+
+} 
+.oone-select-control select {
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  padding: 6px 8px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.oone-select-control {
+  margin-bottom: 15px;
+}
+/* Make the label smaller & tighter */
+.oone-boxmodel-input .components-base-control__label {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Center the input */
+.oone-boxmodel-input input.components-text-control__input {
+  text-align: center;
+}/* Shared styles for all button groups */
+.oone-alignment-control,
+.oone-vertical-align-control,
+.oone-formatting-control {
+  margin-top: 12px;
+
+  p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #444;
+  }
+
+  .components-button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    width: 100%;
+  }
+
+  /* Apply styles to buttons anywhere inside the group */
+  .components-button-group .components-button,
+  .components-button-group .components-tooltip .components-button {
+    flex: 1 1 0;
+    max-width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    background: #ffffff;
+    color: #9813ca;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    box-sizing: border-box;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      background: #eed4fa;
+      color: #9813ca;
+    }
+
+    &:focus {
+      outline: none;
+      background: #9813ca;
+      color: #eed4fa;
+      box-shadow: 0 0 6px rgba(197, 90, 242, 0.7);
+    }
+
+    &.is-pressed {
+      background: #9813ca;
+      color: #eed4fa;
+
+      &:hover {
+        background: #eed4fa;
+        color: #9813ca;
+      }
+    }
+  }
+}
+
+
+// Add these new classes to your editor.scss file
+
+.oone-title {
+  // Base class, ensures positioning is correct for underline
+  position: relative;
+}
+
+.oone-title-gradient-static,
+.oone-title-gradient-animated {
+  // These classes apply the text-clipping effect
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; // A fallback for text-fill-color
+}
+
+.oone-title-gradient-animated {
+  // This class adds the animation ONLY when required
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 200% 0; /* start offset to the right */
+  }
+  100% {
+    background-position: 0 0; /* end at normal position */
+  }
+}
+/* Remove arrows in Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

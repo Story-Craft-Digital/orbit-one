@@ -1,0 +1,174 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "oone/oone-multi-image-hero-carousel",
+	"version": "0.1.0",
+	"title": "Multi-Image Hero Carousel",
+	"category": "oone-blocks",
+	"icon": "smiley",
+	"description": "An immersive hero banner featuring a unique multi-layered background system. It cycles through multiple images per slide with smooth cinematic transitions, paired with high-performance text animations and dual call-to-action buttons. Designed to capture immediate attention and deliver a storytelling experience at the very top of your page.",
+	"keywords": ["hero", "carousel", "slider", "banner", "animation","slideShow","images","projects","achievements","oone","slide"],
+	"example": {},
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"slides": {
+			"type": "array",
+			"default": [
+				{
+					"images": [
+						"oone-multi-image-carousel-card1-image-1.webp",
+						"oone-multi-image-carousel-card1-image-2.webp"
+					],
+					"title": "Storytelling. Crafted for Digital.",
+					"description": "We build highly engaging, conversion-focused narratives across every digital touchpoint.",
+					"titleColor":"accent",
+					"titleFontSize":58,
+					"descriptionFontSize":30,
+					"descriptionColor":"neutral",
+					"btn1textColor":"white",
+					"btn2textColor":"primary",
+					"btn1text": "Our Services",
+					"btn1link": "#services",
+					"btn1Color": "primary",
+					"btn2text": "Contact Us",
+					"btn2link": "#contact",
+					"btn2Color": "secondary",
+					"imageAlt":""
+				},
+				{
+					"images": [
+						"oone-multi-image-carousel-card2-image-1.webp",
+						"oone-multi-image-carousel-card2-image-2.webp"
+					],
+					"title": "Interactive UX. Dynamic Impact.",
+					"description": "Seamless, high-performance interfaces that optimize the modern user journey.",
+					"titleColor":"",
+					"titleFontSize":58,
+					"descriptionFontSize":30,
+					"descriptionColor":"",
+					"btn1textColor":"white",
+					"btn2textColor":"primary",
+					"btn1text": "Learn More",
+					"btn1link": "#learn",
+					"btn1Color": "secondary",
+					"btn2text": "Get Quote",
+					"btn2link": "#quote",
+					"btn2Color": "primary",
+					"imageAlt":""
+				}
+			]
+		},
+		"slideTitleFontSize": {"type": "number", "default": 58 },
+		"slideDescriptionFontSize": { "type": "number", "default": 30 },
+		"buttonFontSize":{ "type": "number", "default": 20 },
+		"titleBold": { "type": "boolean", "default": true },
+		"titleItalics": { "type": "boolean", "default": false },
+		"titleUnderline": { "type": "boolean", "default": false },
+		"descriptionBold": { "type": "boolean", "default": false },
+		"descriptionItalics": { "type": "boolean", "default": false },
+		"descriptionUnderline": { "type": "boolean", "default": false },
+		"buttonBold": { "type": "boolean", "default": false },
+		"buttonItalics": { "type": "boolean", "default": false },
+		"buttonUnderline": { "type": "boolean", "default": false },
+		"uniteSlideSettings": { "type": "boolean", "default": true },
+		"overlayColor": { "type": "string", "default": "light" },
+		"overlayOpacity": { "type": "number", "default": 1 },
+		"buttonsBorderRadius": {
+			"type": "object",
+			"default": {
+				"topLeft": "10",
+				"topRight": "10",
+				"bottomRight": "10",
+				"bottomLeft": "10"
+			}
+		},
+		"padding": {
+			"type": "object",
+			"default": { "top": "25", "right": "25", "bottom": "25", "left": "25" }
+		},
+		"mobilePadding": {
+			"type": "object",
+			"default": { "top": "10", "right": "10", "bottom": "10", "left": "10" }
+		},
+		"titleLineHeight": {
+			"type": "number",
+			"default": 1
+		},
+		"titlePadding": {
+			"type": "object",
+			"default": { "top": "0", "right": "25", "bottom": "0", "left": "25" }
+		},
+		"descriptionMargin": {
+			"type": "object",
+			"default": { "top": "15", "right": "25", "bottom": "20", "left": "25" }
+		},
+		"titleAlign": { "type": "string", "default": "left" },
+		"descriptionLineHeight": {
+			"type": "number",
+			"default": 1
+		},
+		"descriptionAlign": { "type": "string", "default": "left" },
+		"buttonsAlign": { "type": "string", "default": "left" },
+		"slideTitleColor": {
+			"type": "string",
+			"default": "accent"
+		},
+		"slideDescriptionColor": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"slideBtn1textColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"slideBtn2textColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"slideBtn1Color": {
+			"type": "string",
+			"default": "primary"
+		},
+		"slideBtn2Color": {
+			"type": "string",
+			"default": "secondary"
+		},
+		"arrowColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"arrowBgColor": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"buttonSize": {
+			"type": "number",
+			"default": 40
+		},
+		"scrollSpeed": {
+			"type": "number",
+			"default": 0.5
+		}
+	},
+	"textdomain": "orbit-one",
+	"editorScript": [
+		"file:./index.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": [
+		"file:./view.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	]
+}

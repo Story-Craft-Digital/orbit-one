@@ -1,0 +1,185 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "oone/oone-brand-slide-carousel",
+	"version": "0.1.0",
+	"title": "Brand Carousel",
+	"category": "oone-blocks",
+	"description": "A professional logo showcase featuring two rows of brand icons that automatically scroll in opposite directions. Designed to display partnerships and client logos in a high-performance, seamless loop that builds instant trust with your visitors.",
+	"example": {},
+	"keywords": [
+		"assosiates",
+		"carousel",
+		"slide",
+		"branding",
+		"oone",
+		"testimonials"
+	],
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"caption": { 
+			"type": "string",
+			"default": "Strategic Partnerships" 
+		},
+		"captionFontSize": {
+			"type": "number",
+			"default": 20
+		},
+		"captionLineHeight": {
+			"type": "number",
+			"default": 1.2
+		},
+		"captionPadding": {
+			"type": "object",
+			"default": { "top": "0", "right": "20", "bottom": "20", "left": "20" }
+		},
+		"captionAlign": { "type": "string", "default": "center" },
+		"captionBold": { "type": "boolean", "default": true },
+		"captionItalics": { "type": "boolean", "default": false },
+		"captionUnderline": { "type": "boolean", "default": false },
+		"captionColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"titleOne": { 
+			"type": "string",
+			"default": "Trusted by Industry Leaders." 
+		},
+		"titleTwo": { 
+			"type": "string",
+			"default": "Powering Growth Through Collaboration." 
+		},
+		"titleFontSize": {
+			"type": "number",
+			"default": 30
+		},
+		"titleLineHeight": {
+			"type": "number",
+			"default": 1.3
+		},
+		"titlePadding": {
+			"type": "object",
+			"default": { "top": "0", "right": "20", "bottom": "20", "left": "20" }
+		},
+		"titleAlign": { "type": "string", "default": "center" },
+		"titleBold": { "type": "boolean", "default": true },
+		"titleItalics": { "type": "boolean", "default": false },
+		"titleUnderline": { "type": "boolean", "default": false },
+		"titleColor": {
+			"type": "string",
+			"default": "accent"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"padding": {
+			"type": "object",
+			"default": { "top": "20", "right": "0", "bottom": "20", "left": "0" }
+		},
+		"mobilePadding": {
+			"type": "object",
+			"default": { "top": "10", "right": "0", "bottom": "10", "left": "0" }
+		},
+		"slideGap": {
+			"type": "number",
+			"default": 50
+		},
+		"minSlidesToShow": {
+			"type": "number",
+			"default": 1.3
+		},
+		"slideNameFontSize": {
+			"type": "number",
+			"default": 22
+		},
+		"slideNameLineHeight": {
+			"type": "number",
+			"default": 1
+		},
+		"slideNameBold": { "type": "boolean", "default": true },
+		"slideNameItalics": { "type": "boolean", "default": false },
+		"slideNameUnderline": { "type": "boolean", "default": false },
+		"slideBorderRadius": {
+			"type": "object",
+			"default": {
+				"topLeft": 20,
+				"topRight": 20,
+				"bottomRight": 20,
+				"bottomLeft": 20
+			}
+		},
+		"slideNameColor": {
+			"type": "string",
+			"default": "accent"
+		},
+		"slideWidth": {
+			"type": "number",
+			"default": 160
+		},
+		"slidesColor": {
+			"type": "string",
+			"default": "transparent"
+		},
+		"scrollSpeed": {
+			"type": "number",
+			"default": 0.6
+		},
+		"slides": {
+			"type": "array",
+			"default": [
+				{
+					"name": "",
+					"link": "#",
+					"image": "oone-brand-carousel-image-1.webp",
+					"imgAlt": "Orion Digital"
+				},
+				{
+					"name": "",
+					"link": "#",
+					"image": "oone-brand-carousel-image-2.webp",
+					"imgAlt": "Catalyst Logistics"
+				},
+				{
+					"name": "",
+					"link": "#",
+					"image": "oone-brand-carousel-image-3.webp",
+					"imgAlt": "Luminary AI"
+				},
+				{
+					"name": "",
+					"link": "#",
+					"image": "oone-brand-carousel-image-4.webp",
+					"imgAlt": "Horizon Growth"
+				},
+				{
+					"name": "",
+					"link": "#",
+					"image": "oone-brand-carousel-image-5.webp",
+					"imgAlt": "Apex Fintech"
+				}
+			]
+		}
+	},
+	"textdomain": "orbit-one",
+	"editorScript": [
+		"file:./index.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+        "oone-color-palette"
+	],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": [
+		"file:./view.js", 
+		"oone-shared-libs", 
+		"oone-tailwind",
+        "oone-color-palette"
+	]
+}

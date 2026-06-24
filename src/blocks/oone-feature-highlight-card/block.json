@@ -1,0 +1,219 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "oone/oone-feature-highlight-card",
+	"version": "0.1.0",
+	"title": "Feature Highlight Card",
+	"category": "oone-blocks",
+	"icon": "smiley",
+	"description": "A conversion-focused promotional card that layers bold headlines and an interactive checklist over a customizable image background. Perfectly balanced with a gradient overlay and a prominent call-to-action button to turn features into clicks.",
+	"example": {},
+	"keywords": [
+		"feature",
+		"list",
+		"checklist",
+		"highlight",
+		"promo",
+		"card",
+		"cta",
+		"oone"
+	],
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"image": {
+			"type": "string",
+			"default": "oone-featured-card-placeholder.webp"
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": "Feature highlight image"
+		},
+		"gradientOverlay": {
+			"type": "string",
+			"default": "linear-gradient(135deg, secondary, primary)"
+		},
+		"gradientOpacity": {
+			"type": "number",
+			"default": 0.4
+		},
+		"borderRadius": {
+			"type": "object",
+			"default": {
+				"topLeft": "20",
+				"topRight": "20",
+				"bottomRight": "20",
+				"bottomLeft": "20"
+			}
+		},
+		
+		"maxWidth": {
+			"type": "number",
+			"default": 512
+		},
+		"title": {
+			"type": "string",
+			"default": "Accelerate Your Digital Growth"
+		},
+		"titleAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"titleFontSize": {
+			"type": "number",
+			"default": 40
+		},
+		"mobileTitleFontSize": {
+			"type": "number",
+			"default": 28
+		},
+		"titleBold": { "type": "boolean", "default": true },
+		"titleItalics": { "type": "boolean", "default": false },
+		"titleUnderline": { "type": "boolean", "default": false },
+		"titleLineHeight": {
+			"type": "number",
+			"default": 1
+		},
+		"options": {
+			"type": "array",
+			"default": [
+				{ "item": "Data-Driven SEO Strategies" },
+				{ "item": "High-Converting Content Creation" },
+				{ "item": "Advanced Social Media Marketing" }
+			]
+		},
+		"optionsAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"itemColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"optionsFontSize": {
+			"type": "number",
+			"default": 22
+		},
+		"mobileOptionsFontSize": {
+			"type": "number",
+			"default": 16
+		},
+		"optionsBold": { "type": "boolean", "default": false },
+		"optionsItalics": { "type": "boolean", "default": false },
+		"optionsUnderline": { "type": "boolean", "default": false },
+		"showTickIcons": {
+			"type": "boolean",
+			"default": true
+		},
+		"tickIconSize": {
+			"type": "number",
+			"default": 24
+		},
+		"mobileTickIconSize": {
+			"type": "number",
+			"default": 20
+		},
+		"tickIconColor": {
+			"type": "string",
+			"default": "light"
+		},
+		"tickBgColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "GET A FREE AUDIT"
+		},
+		"buttonLink": {
+			"type": "string",
+			"default": "#"
+		},
+		"buttonAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"buttonFontSize": {
+			"type": "number",
+			"default": 18
+		},
+		"mobileButtonFontSize": {
+			"type": "number",
+			"default": 16
+		},
+		"buttonColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": "light"
+		},
+		"buttonTextColor": {
+			"type": "string",
+			"default": "light"
+		},
+		"buttonTextHoverColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"buttonTextBold": { "type": "boolean", "default": true },
+		"buttonTextItalics": { "type": "boolean", "default": false },
+		"buttonTextUnderline": { "type": "boolean", "default": false },
+		"buttonBorder": { "type": "string", "default": "solid" },
+		"buttonBorderSize": { "type": "number", "default": 0 },
+		"buttonsBorderRadius": {
+			"type": "object",
+			"default": {
+				"topLeft": "0",
+				"topRight": "25",
+				"bottomRight": "0",
+				"bottomLeft": "25"
+			}
+		},
+		"align": {
+			"type": "string",
+			"default": "center"
+		},
+		"padding": {
+			"type": "object",
+			"default": { "top": "25", "right": "25", "bottom": "25", "left": "25" }
+		},
+		"mobilePadding": {
+			"type": "object",
+			"default": { "top": "10", "right": "10", "bottom": "10", "left": "10" }
+		},
+		"margin": {
+			"type": "object",
+			"default": { "top": "25", "right": "25", "bottom": "25", "left": "25" }
+		},
+		"mobileMargin": {
+			"type": "object",
+			"default": { "top": "10", "right": "10", "bottom": "10", "left": "10" }
+		}
+	},
+	"textdomain": "orbit-one",
+	"editorScript": [
+		"file:./index.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": [
+		"file:./view.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	]
+}

@@ -1,0 +1,76 @@
+
+/* Hide scrollbar for all browsers */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* Carousel Button Styling */
+.carousel-button {
+  all: unset; /* Reset all button styles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  
+  /* Explicitly remove background */
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent focus outline */
+.carousel-button:focus,
+.carousel-button:active {
+  outline: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent hover from changing background */
+.carousel-button:hover {
+  transform: scale(1.2); /* Scale effect remains */
+  background: none !important;
+  box-shadow: none !important;
+}
+
+
+.carousel-button-left {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-button-right {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hover Effect: Scale and Blink */
+.carousel-button:hover {
+  transform: scale(1.2); /* Scale slightly larger */
+}
+
+.blink-effect:hover {
+  animation: blink 2s infinite; /* Blink effect on hover */
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+

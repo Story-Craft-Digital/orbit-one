@@ -1,0 +1,256 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "oone/oone-testimonials-carousel",
+	"version": "0.1.0",
+	"title": "Testimonials Carousel",
+	"category": "oone-blocks",
+	"icon": "smiley",
+	"description": "A trust-building testimonial engine that showcases authentic client feedback in a dynamic, dual-row sliding carousel. Featuring precise star-rating visualizations and automated SEO Review Schema, it turns social proof into a high-end visual experience that perfectly scales across all devices.",
+	"example": {},
+	"keywords": ["review", "carousel", "slide", "rating", "oone", "testimonials"],
+	"supports": {
+		"html": false,
+		"multiple": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"caption": {
+			"type": "string",
+			"default": "Client Feedback"
+		},
+		"captionFontSize": {
+			"type": "number",
+			"default": 20
+		},
+		"captionLineHeight": {
+			"type": "number",
+			"default": 1.2
+		},
+		"captionPadding": {
+			"type": "object",
+			"default": { "top": "0", "right": "20", "bottom": "20", "left": "20" }
+		},
+		"captionAlign": { "type": "string", "default": "center" },
+		"captionBold": { "type": "boolean", "default": true },
+		"captionItalics": { "type": "boolean", "default": false },
+		"captionUnderline": { "type": "boolean", "default": false },
+		"captionColor": {
+			"type": "string",
+			"default": "primary"
+		},
+		"titleOne": {
+			"type": "string",
+			"default": "Transforming Visions into Digital Success."
+		},
+		"titleTwo": {
+			"type": "string",
+			"default": "Hear What Our Partners Say"
+		},
+		"titleFontSize": {
+			"type": "number",
+			"default": 35
+		},
+		"titleLineHeight": {
+			"type": "number",
+			"default": 1.3
+		},
+		"titlePadding": {
+			"type": "object",
+			"default": { "top": "0", "right": "20", "bottom": "20", "left": "20" }
+		},
+		"titleAlign": { "type": "string", "default": "center" },
+		"titleBold": { "type": "boolean", "default": true },
+		"titleItalics": { "type": "boolean", "default": false },
+		"titleUnderline": { "type": "boolean", "default": false },
+		"titleColor": {
+			"type": "string",
+			"default": "accent"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "transparent"
+		},
+		"padding": {
+			"type": "object",
+			"default": { "top": "20", "right": "0", "bottom": "20", "left": "0" }
+		},
+		"mobilePadding": {
+			"type": "object",
+			"default": { "top": "10", "right": "0", "bottom": "10", "left": "0" }
+		},
+		"slideGap": {
+			"type": "number",
+			"default": 40
+		},
+		"slideContentGap": {
+			"type": "number",
+			"default": 15
+		},
+		"minSlidesToShow": {
+			"type": "number",
+			"default": 1.3
+		},
+		"slideNameFontSize": {
+			"type": "number",
+			"default": 17
+		},
+		"slideNameLineHeight": {
+			"type": "number",
+			"default": 1
+		},
+		"slideNameBold": { "type": "boolean", "default": true },
+		"slideNameItalics": { "type": "boolean", "default": false },
+		"slideNameUnderline": { "type": "boolean", "default": false },
+		"slideNameColor": {
+			"type": "string",
+			"default": "accent"
+		},
+		"slideTextFontSize": {
+			"type": "number",
+			"default": 15
+		},
+		"slideTextLineHeight": {
+			"type": "number",
+			"default": 1.3
+		},
+		"slideTextBold": { "type": "boolean", "default": false },
+		"slideTextItalics": { "type": "boolean", "default": true },
+		"slideTextUnderline": { "type": "boolean", "default": false },
+		"slideTextColor": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"slideRatingSize": {
+			"type": "number",
+			"default": 15
+		},
+		"slideImageSize": {
+			"type": "number",
+			"default": 45
+		},
+		"slideRatingColor": {
+			"type": "string",
+			"default": "#F3BE00"
+		},
+		"slidePadding": {
+			"type": "object",
+			"default": { "top": "20", "right": "20", "bottom": "20", "left": "20" }
+		},
+		"slideBackgroundColor": {
+			"type": "string",
+			"default": "white"
+		},
+		"slideWidth": {
+			"type": "number",
+			"default": 350
+		},
+		"reviewedEntityType": {
+			"type": "string",
+			"default": "LocalBusiness"
+		},
+		"reviewedEntityName": {
+			"type": "string",
+			"default": "Saudi PCC Services"
+		},
+		"slideBorderRadius": {
+			"type": "object",
+			"default": {
+				"topLeft": 20,
+				"topRight": 20,
+				"bottomRight": 20,
+				"bottomLeft": 20
+			}
+		},
+		"scrollSpeed": {
+			"type": "number",
+			"default": 0.5
+		},
+		"slides": {
+    "type": "array",
+    "default": [
+        {
+            "name": "Sarah Chen",
+            "text": "Story Craft Digital genuinely revitalized how we connect with customers. Seeing leads increase by 45% felt like a true joint achievement!",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-sarah.webp",
+            "imgAlt": "Sarah Chen, Marketing Director"
+        },
+        {
+            "name": "Mark Rodriguez",
+            "text": "The resulting modern design is exactly what we hoped for. We’ve seen measurable growth in both user engagement and satisfaction since launch.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-mark.webp",
+            "imgAlt": "Mark Rodriguez, Founder"
+        },
+        {
+            "name": "Aisha Khan",
+            "text": "They simplified a complex part of our business, and the resulting ROI was remarkable. Their analytical precision gave us the competitive advantage we needed.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-aisha.webp",
+            "imgAlt": "Aisha Khan, Chief Data Officer"
+        },
+        {
+            "name": "David Smith",
+            "text": "The content precision they brought to our strategic narrative changed everything. Story Craft Digital captured attention by simplifying our message.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-david.webp",
+            "imgAlt": "David Smith, Head of Strategy"
+        },
+        {
+            "name": "Elena Petrova",
+            "text": "They didn't just present complex theories; they showed us exactly how to unify our story with scalable, sophisticated tech. This felt like true digital innovation.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-elena.webp",
+            "imgAlt": "Elena Petrova, Visionary Founder"
+        },
+        {
+            "name": "Kenji Tanaka",
+            "text": " delivered a cohesive, tailored system that feels authentic to who we are. It’s been a professional pleasure working with them.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-kenji.webp",
+            "imgAlt": "Kenji Tanaka, Brand Manager"
+        },
+        {
+            "name": "Priya Sharma",
+            "text": "Their close-up focus and elegant handling of data visualizations helped us communicate effectively, truly crafting digital impact.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-priya.webp",
+            "imgAlt": "Priya Sharma, Lead Strategist"
+        },
+        {
+            "name": "Dr. Ben Carter",
+            "text": "The sophisticated dashboard they delivered Unified data perfectly with our core business narrative, providing clarity on our digital performance.",
+            "rating": 5,
+            "link": "#",
+            "image": "oone-testimonial-image-ben.webp",
+            "imgAlt": "Dr. Ben Carter, Director"
+        }
+    ]
+}
+	},
+	"textdomain": "orbit-one",
+	"editorScript": [
+		"file:./index.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": [
+		"file:./view.js",
+		"oone-shared-libs",
+		"oone-tailwind",
+		"oone-color-palette"
+	]
+}
